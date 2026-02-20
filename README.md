@@ -29,6 +29,7 @@ The app allows users to browse restaurants, make table reservations, and upload 
 
 ## Project Structure
 
+```
 project-root/
 │
 ├─ app.js               # Main Express application
@@ -43,5 +44,6 @@ project-root/
 ├─ views/               # EJS templates
 ├─ public/              # Static files (CSS, client JS, images)
 └─ middleware/          # Middleware modules
+```
 
 - The database setup is included in setup.sql, which creates the login, user, and necessary tables for the project.
