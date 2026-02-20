@@ -1,0 +1,98 @@
+p,
+em {
+  color: #384c4d;
+  background-color: #f1f1f1;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+ol.romai {
+  list-style-type: upper-roman;
+}
+
+ol.abc {
+  list-style-type: lower-alpha;
+}
+
+a:link {
+  color: #324a7c;
+  font-style: italic;
+}
+
+a:visited {
+  color: #bc4ea1;
+  font-style: normal;
+}
+
+a:hover {
+  color: blueviolet;
+  font-style: italic;
+}
+
+a:active {
+  color: chocolate;
+  font-style: normal;
+}
+
+.zoldAlahuzotttStilusOsztaly {
+  color: #0f4f66;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  text-align: center;
+  text-decoration: underline;
+}
+
+body {
+  background-image: url('assets/backg.jpg');
+  background-repeat: repeat;
+}
+
+section h2 + ol {
+  color: #0f4f66;
+  list-style-type: lower-alpha;
+}
+
+div {
+  border-style: double;
+  padding-right: 100px;
+  padding-bottom: 30px;
+}
+
+tbody tr:nth-child(odd) td:nth-child(odd),
+tbody tr:nth-child(even) td:nth-child(even) {
+  background-color: #e88e8e;
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+tbody tr:nth-child(odd) td:nth-child(even),
+tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #67b0dd;
+  font-style: normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#kep1 {
+  margin-left: 0;
+}
+
+.kepek {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 600px) {
+  .kepek img {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .kepek img {
+    margin-left: -150px;
+  }
+}

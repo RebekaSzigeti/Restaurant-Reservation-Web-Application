@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vendéglők listája</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/vendeglo.css" />
+  </head>
+
+  <body>
+     <header>
+      <%- include('partials/navbar') %>
+
+       <nav>
+    <ul>
+       <li>
+        <a href="/index2.html">Rómáról</a>
+      </li>
+       <li>
+        <a href="/eghajlat.html">Róma éghajlata</a>
+      </li>
+       <li>
+        <a href="/latnivalok.html">Látnivalók</a>
+      </li>
+        <li>
+            <a href="/ticTacToe.html">Tic-Tac-Toe</a>
+        </li>
+    </ul>
+  </nav>
+</header>
+ 
+    <h1>Vendéglők</h1>
+
+    <% if (vendeglok.length) { %>
+      <table>
+        <tr>
+          <th>Nyitás</th>
+          <th>Zárás</th>
+          <th>Reszletek</th>
+        </tr>
+
+        <% vendeglok.forEach(v => { %>
+          <tr class="sorok" id="<%= v.id %>">
+            <td><%= v.nyit_ora %>:<%= v.nyit_perc %></td>
+            <td><%= v.zaras_ora %>:<%= v.zaras_perc %></td>
+            <td><a href="/vendeglo/<%= v.id %>">Részletek</a></td>
+          </tr>
+           <tr>
+            <td colspan="3" id="sorok<%= v.id %>"></td>
+           </tr>
+        <% }) %>
+
+      </table>
+    <% } else { %>
+      <p>Nincs vendéglő az adatbázisban.</p>
+    <% } %>
+
+<% if (typeof message !== 'undefined' && message) { %>
+  <p class="uzenet"><%= message %></p>
+<% } %>
+     <h1>Vendéglő bevezetése</h1>
+     <form action="/vendegloHozzaadasa" method="POST">
+        <p>Város: <input type="text" name="varos" required></p>
+        <p>Utca: <input type="text" name="utca" required></p>
+        <p>Házszám: <input type="number" name="hazszam" value="0"></p>
+        <p>Telefonszám: <input type="text" name="telefonszam" required></p>
+        <p>Nyitvatartás kezdete:
+             <input type="number" name="kezdetOra" min="0" max="23" value="0">
+             <input type="number" name="kezdetPerc" min="0" max="59" value="0">
+        </p>
+        <p> Nyitvatartás vége:
+             <input type="number" name="vegeOra" min="0" max="23" value="0">
+             <input type="number" name="vegePerc" min="0" max="59" value="0">
+        </p>
+        <p><button type="submit">Leadom</button></p>
+  </form>
+
+  <footer>
+     Szigeti Rebeka-Izabella, 523, srim2508
+  </footer>
+  <script src="extraInformacio.js"></script>
+  </body>
+</html>

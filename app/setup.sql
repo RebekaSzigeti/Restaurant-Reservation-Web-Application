@@ -1,0 +1,5 @@
+CREATE LOGIN webprog WITH PASSWORD = 'YOUR_PASSWORD_HERE';
+
+USE webprog;
+CREATE USER webprog FOR LOGIN webprog;
+ALTER ROLE db_owner ADD MEMBER webprog;

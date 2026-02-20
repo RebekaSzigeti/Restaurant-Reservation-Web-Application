@@ -1,0 +1,65 @@
+table {
+  border-collapse: collapse;
+}
+
+td {
+  min-width: 60px;
+  min-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+a:link {
+  color: #324a7c;
+  font-style: italic;
+}
+
+a:visited {
+  color: #bc4ea1;
+  font-style: normal;
+}
+
+a:hover {
+  color: blueviolet;
+  font-style: italic;
+}
+
+a:active {
+  color: chocolate;
+  font-style: normal;
+}
+
+body {
+  background-image: url('assets/backg.jpg');
+  background-repeat: repeat;
+  font-size: 16px;
+}
+
+h1 {
+  font-family:
+    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.uzenet {
+  font-weight: bold;
+  font-size: 20px;
+  color: #3671cf;
+}
+
+#visszajelzes {
+  font-weight: bold;
+  font-size: 20px;
+  color: #3671cf;
+}
+
+.sorok{
+  user-select: none;
+}
+
+
+
+

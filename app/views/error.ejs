@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs', { title: 'Error' }) %>
+
+  <body>
+   <nav>
+        <ul>
+          <li>
+            <a href="/">Főoldal</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h1>We have encountered an error</h1>
+      <p>Message:</p>
+      <p>
+        <%= message %>
+      </p>
+      <p>Maybe you would like to visit the
+        <a href="/">vendeglok page</a>
+      </p>
+
+  </body>
+
+</html>

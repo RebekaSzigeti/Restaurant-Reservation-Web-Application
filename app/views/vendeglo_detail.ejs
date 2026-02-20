@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <title>Asztal foglalása</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" media="screen" href="/vendeglo.css">
+</head>
+
+<body>
+  <header>
+    <%- include('partials/navbar') %>
+  </header>
+
+
+  <section>
+  <h1><%= vendeglo.varos %>, <%= vendeglo.utca %> <%= vendeglo.hazszam %></h1>
+
+  <h2>Foglalások</h2>
+  <ul  id="foglalasLista">
+    <% foglalasok.forEach(f => { %>
+      <li id="foglalas<%= f.id %>">Óra: <%= f.ora %>, Perc: <%= f.perc %>
+        <% if (f.felhasznalo_id == userId) { %>
+      <button
+        type="button"
+        class="torlesGomb"
+        id="<%= f.id %>">
+        Törlés
+      </button>
+       <% } %>
+      </li>
+    <% }) %>
+    <% if (foglalasok.length === 0) { %>
+      <li>Nincsenek foglalások.</li>
+    <% } %>
+  </ul>
+<p id="visszajelzes"></p>
+  <h2>Képek</h2>
+  <div class="kepek">
+    <% fenykep.forEach(k => { %>
+      <img src="/vendeglohozKepek/<%= vendeglo.id %>/<%= k.fajlnev %>" alt="vendeglohozTartozoKep" width="200">
+    <% }) %>
+    <% if (fenykep.length === 0) { %>
+      <p>Nincsenek feltöltött képek.</p>
+    <% } %>
+  </div>
+</section>
+
+<% if (typeof message !== 'undefined' && message) { %>
+  <p class="uzenet"><%= message %></p>
+<% } %>
+
+  <section>
+  <h1>Asztal foglalása</h1>
+
+  <form action="/vendeglo/<%= vendeglo.id %>/foglalas" method="POST">
+    <p>Óra:
+            <input type="number" name="ora" min="0" max="23" value="0">
+        </p>
+
+          <p>Perc:
+             <input type="number" name="perc" min="0" max="59" value="0">
+        </p>
+
+    <p>
+      <button type="submit">Foglalás</button>
+    </p>
+
+  </form>
+
+  </section>
+
+   <section>
+    <h1>Fénykép feltöltése</h1>
+    <form action="/vendeglo/<%= vendeglo.id %>/fenykep" method="POST" enctype="multipart/form-data">
+      <p>Kép: <input type="file" name="fenykep" required></p>
+      <p><button type="submit">Feltöltés</button></p>
+    </form>
+  </section>
+
+  <footer>
+    Szigeti Rebeka-Izabella, 523, srim2508
+  </footer>
+<script src="/torles.js"></script>
+</body>
+</html>

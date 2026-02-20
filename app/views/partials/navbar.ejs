@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li><a href="/">Főoldal</a></li>
+    <% if (typeof username !== 'undefined' && username) { %>
+      <li>Bejelentkezve: <%= username %></li>
+      <li><a href="/logout">Logout</a></li>
+    <% } else { %>
+      <li><a href="/login">Login</a></li>
+    <% } %>
+  </ul>
+</nav>
